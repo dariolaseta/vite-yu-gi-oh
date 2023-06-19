@@ -8,22 +8,21 @@
             </div>
 
             <div class="cards-container">
-                <div class="card">
-                    <div class="img">
-
-                    </div>
-                    <div class="test-p">
-                        <p>"A" cell breeding device</p>
-                        <p>Alien</p>
-                    </div>
-                </div>
+                <Cards />
             </div>
         </div>
     </main>
 </template>
 <script>
+import Cards from "./Cards.vue";
+import Cardlist from "./Cardlist.vue"
+
 export default {
-    name: "AppMain"
+    name: "AppMain",
+    components: {
+        Cards,
+        Cardlist
+    }
 }
 </script>
 <style scoped lang="scss">
@@ -55,30 +54,10 @@ export default {
             div.cards-container{
                 margin: 0 auto;
                 width: 80%;
-                height: 900px; //rimuovere
                 background-color: red;
                 display: flex;
                 flex-wrap: wrap;
-
-                div.card{
-                    height: 300px;
-                    width: 200px;
-                    background-color: blue;
-
-                    div.img{
-                        height: 70%;
-                        width: 100%;
-                        background-color: black;
-                    }
-
-                    div.test-p{
-
-                        p{
-                            margin: 1rem;
-                            text-align: center;
-                        }
-                    }
-                }
+                align-items: center;
             }
         }
     }
