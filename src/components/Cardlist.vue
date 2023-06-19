@@ -1,11 +1,11 @@
 <template>
     <div v-for="(cards, index) in cardList" class="card">
             <div class="img">
-                <img :src="cardList[index].card_images[0].image_url" alt="cardList[index].name">
+                <img :src="cardList[index].card_images[0].image_url" :alt="cardList[index].name">
             </div>
 
-            <div class="test-p">
-                <p>"A" cell breeding device</p>
+            <div class="card-names">
+                <p>{{cardList[index].name}}</p>
                 <p>Alien</p>
             </div>
     </div>
@@ -61,7 +61,8 @@ export default {
             }
         }
 
-        div.test-p{
+        div.card-names{
+            height: 100px;
             p{
                 margin: 1rem;
                 text-align: center;
