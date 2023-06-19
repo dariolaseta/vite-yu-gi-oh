@@ -15,6 +15,7 @@ export default {
 </script>
 <style scoped lang="scss">
     header{
+        background-color: white;
         height: 70px;
         width: 100%;
         display: flex;
