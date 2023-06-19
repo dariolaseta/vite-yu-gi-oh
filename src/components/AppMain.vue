@@ -54,7 +54,6 @@ export default {
             div.cards-container{
                 margin: 0 auto;
                 width: 80%;
-                background-color: red;
                 display: flex;
                 flex-wrap: wrap;
                 align-items: center;

@@ -6,7 +6,7 @@
 
             <div class="card-names">
                 <p>{{cardList[index].name}}</p>
-                <p>Alien</p>
+                <p>{{cardList[index].archetype}}</p>
             </div>
     </div>
 </template>
@@ -47,7 +47,7 @@ export default {
 <style scoped lang="scss">
     div.card{
         width: calc(100% / 6);
-        background-color: blue;
+        background-color: #d48f38;
         display: flex;
         flex-wrap: wrap;
         margin: 0 .5rem;
