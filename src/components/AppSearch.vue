@@ -1,10 +1,10 @@
 <template>
-    <select v-model="store.selectedEl" placeholder="seleziona" @change="filterArchetype">
-        <option v-for="(option, index) in store.archetypeArr">
-        {{ store.archetypeArr[index].archetype_name }}</option>
-    </select>
-
-    
+    <select name="archetype">
+            <option @click=" $emit('everything', 'everyArch')" value="archetype">Archetype</option>
+            <option v-for="(archetype, index) in store.archetypeArr" @click=" $emit('select', archetype.archetype_name)">
+                {{ archetype.archetype_name }}
+            </option>
+        </select>
 </template>
 
 <script>
@@ -22,15 +22,7 @@ export default {
         }
     },
     methods:{
-        filterArchetype(){
-            if(this.store.selectedEl !== ""){
-                console.log(this.store.cardList.filter((el) => el.archetype === this.store.selectedEl))
-                return this.store.cardList.filter((el) => el.archetype === this.store.selectedEl)
-            }else{
-                console.log(this.store.cardList)
-                return this.store.cardList
-            }
-        }
+        
     },
     created(){
         axios.get(this.archetypeApi).then((response) =>{

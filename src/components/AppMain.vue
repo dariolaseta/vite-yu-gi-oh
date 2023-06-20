@@ -1,5 +1,7 @@
 <template>
     <main>
+        
+        <AppSearch @select="findArchetype" @everything="findArchetype"/>
         <div class="container">
             <div class="cards-header">
                 <div class="text">
@@ -16,12 +18,31 @@
 <script>
 import Cards from "./Cards.vue";
 import Cardlist from "./Cardlist.vue"
+import AppSearch from "./AppSearch.vue"
+import axios from "axios";
+import {store} from "../store.js"
 
 export default {
     name: "AppMain",
     components: {
         Cards,
-        Cardlist
+        Cardlist,
+        AppSearch
+    },
+    methods:{
+        findArchetype(name = "everyArch"){
+            if(name === "everyArch"){
+                axios.get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0`)
+                    .then((response) => {
+                        store.cardList = response.data.data
+                    })
+            } else {
+                axios.get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0&archetype=${name}`)
+                    .then((response) => {
+                        store.cardList = response.data.data
+                    })
+            }
+        }
     }
 }
 </script>
