@@ -15,7 +15,7 @@
 
 <template>
   <AppHeader />
-  <AppSearch />
+  <AppSearch/>
   <AppMain />
 </template>
 

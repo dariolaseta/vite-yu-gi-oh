@@ -1,12 +1,12 @@
 <template>
-    <div v-for="(cards, index) in cardList" class="card">
+    <div v-for="(cards, index) in store.cardList" class="card">
             <div class="img">
-                <img :src="cardList[index].card_images[0].image_url" :alt="cardList[index].name">
+                <img :src="store.cardList[index].card_images[0].image_url" :alt="store.cardList[index].name">
             </div>
 
             <div class="card-names">
-                <p>{{cardList[index].name}}</p>
-                <p>{{cardList[index].archetype}}</p>
+                <p>{{store.cardList[index].name}}</p>
+                <p>{{store.cardList[index].archetype}}</p>
             </div>
     </div>
 </template>
@@ -33,7 +33,7 @@ export default {
             // per accedere all'url delle carte: response.data.data[0].card_images[0].image_url
             // response.data.data[0].name per accedere al nome della carta
             // response.data.data[0].archetype per l'archetipo
-            this.cardList = response.data.data;
+            this.store.cardList = response.data.data;
         })
         .catch((error) => {
             console.log(error);
