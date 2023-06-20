@@ -24,7 +24,11 @@ export default {
     methods:{
         filterArchetype(){
             if(this.store.selectedEl !== ""){
-                console.log(this.store.selectedEl);
+                console.log(this.store.cardList.filter((el) => el.archetype === this.store.selectedEl))
+                return this.store.cardList.filter((el) => el.archetype === this.store.selectedEl)
+            }else{
+                console.log(this.store.cardList)
+                return this.store.cardList
             }
         }
     },
