@@ -33,9 +33,7 @@ export default {
             // per accedere all'url delle carte: response.data.data[0].card_images[0].image_url
             // response.data.data[0].name per accedere al nome della carta
             // response.data.data[0].archetype per l'archetipo
-            console.log(response.data.data)
             this.cardList = response.data.data;
-            console.log(this.cardList[0].card_images[0].image_url);
         })
         .catch((error) => {
             console.log(error);
