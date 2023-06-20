@@ -1,5 +1,9 @@
 <template>
-    <select placeholder="seleziona"></select>
+    <select v-model="archetypeArr" placeholder="seleziona">
+        <option v-for="(option, index) in archetypeArr">
+        {{ archetypeArr[index].archetype_name }}</option>
+    </select>
+
     
 </template>
 
